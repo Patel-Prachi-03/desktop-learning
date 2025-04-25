@@ -1,0 +1,163 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for image + form */
+.container {
+  margin: auto;
+  display: flex;
+  width: auto;
+  max-width: 900px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+              rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border-radius: 15px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Left image side */
+.image {
+  flex: 1;
+  min-width: 300px;
+  background-color: #dfe6e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Right login form side */
+.login-form {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 40px 30px;
+  background-color: #e8e5d8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.login-form h1 {
+  margin-bottom: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  text-align: center;
+}
+
+/* Divider */
+hr {
+  margin-bottom: 20px;
+  border: none;
+  height: 2px;
+  background-color: #ccc;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Labels */
+label {
+  margin-top: 16px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  align-self: flex-start;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  max-width: 280px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+input:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* Alert for invalid fields */
+.alert.alert-danger {
+  font-size: 13px;
+  color: red;
+  margin-bottom: 12px;
+}
+
+/* Submit button */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #a7a88a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #647c64;
+}
+
+/* Close button (top right of form) */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #ff4444;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    max-width: 95%;
+  }
+
+  .login-form {
+    padding: 20px;
+  }
+
+  input {
+    max-width: 100%;
+  }
+}

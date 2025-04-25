@@ -1,0 +1,182 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Wrapper for full-page layout respecting navbar */
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Adjust if your navbar is taller/shorter */
+  padding: 40px 20px;
+}
+
+/* Main container for form + image */
+.container {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+              rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  position: relative; /* Needed for positioning close button */
+}
+
+/* Left side image */
+.image {
+  flex: 1;
+  min-width: 300px;
+  background-color: #dfe6e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Sign-up form styles */
+.sign-up-form {
+  flex: 1;
+  min-width: 300px;
+  padding: 40px 30px;
+  background-color: #e8e5d8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #ff4d4d;
+}
+
+.sign-up-form h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 26px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+hr {
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Button */
+button {
+  margin-top: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #a7a88a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #647c64;
+}
+
+/* Error messages */
+.alert.alert-danger {
+  font-size: 13px;
+  color: red;
+}
+
+/* Links */
+a {
+  color: #6e7dff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .image,
+  .sign-up-form {
+    width: 100%;
+  }
+
+  .sign-up-form {
+    padding: 30px 20px;
+  }
+}

@@ -1,0 +1,48 @@
+/* homepage.css */
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 40px;
+  height: 500px;
+  background-color: #e8e5d8;
+}
+
+.hero .content {
+  width: 60%;
+}
+
+.hero .content h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 48px;
+  color: #333;
+}
+
+.hero .content p {
+  font-size: 18px;
+  color: #555;
+}
+
+.hero img {
+  width: 40%;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: #a7a88a;
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+}

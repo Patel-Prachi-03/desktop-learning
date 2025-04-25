@@ -1,0 +1,62 @@
+<div class="dashboard-container">
+  <h2 class="dashboard-title">User Dashboard</h2>
+
+  <div class="dashboard-toolbar">
+    <label for="sort">Sort By:</label>
+    <select id="sort" class="form-select" (change)="onSortChange($event)">
+      <option value="id">ID</option>
+      <option value="username">Username</option>
+      <option value="email">Email</option>
+      <option value="gender">Gender</option>
+      <option value="age">Age</option>
+      <option value="address">Address</option>
+    </select>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let std of students; index as i">
+          <td>{{ i + 1 + ((currentPage - 1) * pageSize) }}</td>
+          <td>{{ std.username }}</td>
+          <td>{{ std.email }}</td>
+          <td>{{ std.age }}</td>
+          <td>{{ std.gender }}</td>
+          <td>{{ std.address }}</td>
+          <td class="action-buttons">
+            <button class="btn btn-edit" (click)="updateDialog(std)">Edit</button>
+            <button class="btn btn-delete" (click)="deleteDialog(std.id)">Delete</button>
+          </td>
+        </tr>
+        <tr *ngIf="students.length === 0">
+          <td colspan="7" class="no-data">No users found.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination-container">
+    <button class="pagination-btn" [disabled]="currentPage === 1" (click)="pagination(currentPage - 1, attrname)">‹ Prev</button>
+
+    <button
+      class="pagination-btn"
+      *ngFor="let page of totalPagesArray"
+      [class.active]="page === currentPage"
+      (click)="pagination(page, attrname)">
+      {{ page }}
+    </button>
+
+    <button class="pagination-btn" [disabled]="currentPage === totalPages" (click)="pagination(currentPage + 1, attrname)">Next ›</button>
+  </div>
+</div>

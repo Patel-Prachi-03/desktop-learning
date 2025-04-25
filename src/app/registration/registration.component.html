@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="image">
+    <img src="https://i.imgur.com/FmNdN9v.png" alt="computer girl" />
+  </div>
+
+  <div class="login-form">
+    <!-- Close Button -->
+    <span class="close-button" (click)="closeLogin()">×</span>
+
+    <h1>Log in to your account</h1>
+    <hr />
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- Username Field -->
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" formControlName="username" placeholder="Enter your username" />
+      <div class="alert alert-danger" *ngIf="f['username'].touched && f['username'].invalid">
+        <div *ngIf="f['username'].errors?.['required']">
+          This field is required!
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" formControlName="password" placeholder="Enter your password" />
+      <div class="alert alert-danger" *ngIf="f['password'].touched && f['password'].invalid">
+        <div *ngIf="f['password'].errors?.['required']">
+          This field is required!
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Log in</button>
+    </form>
+  </div>
+</div>
